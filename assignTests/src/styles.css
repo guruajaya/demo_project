@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+background-color: gray;
+}
+@import "~bootstrap/dist/css/bootstrap.css." ;
+
+.container{
+    height: 500px;
+    width: 600px;
+    position: relative;
+    transform: translate(0, 30%);    
+}
+mat-card{
+    margin: 10px;
+    min-height: 100px;
+    height: 100px;
+    width: 46%;
+    float: left;
+}
+.orange{
+    color:orange
+}
+.green{
+    color:green
+}
+.text-right{
+    text-align: right;
+}
+.border-left-inactive{
+    border-left:12px solid yellow;
+}
+.border-left-active{
+    border-left:12px solid green;
+}
+.example-viewport {
+    height: 400px;
+    width: 100%px;
+    border: 1px solid #ccc;
+    margin-bottom: 25px;
+  }
+  
+  
+

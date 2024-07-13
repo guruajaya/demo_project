@@ -1,0 +1,16 @@
+mat-card{
+    margin: 10px;
+    min-height: 100px;
+    height: 100px;
+    width: 46%;
+    float: left;
+}
+.orange{
+    color:orange
+}
+.green{
+    color:green
+}
+.text-right{
+    text-align: right;
+}

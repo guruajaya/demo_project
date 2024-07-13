@@ -1,0 +1,62 @@
+
+    <div class="container">     
+      <mat-card style="width: 100%; height: auto;">
+        <div style="padding: 30px 0;">
+          <div class="heading">New Task</div> 
+          <form [formGroup]="userForm" (ngSubmit)="onSubmit()">   
+      <input type="text"  class="userinput" placeholder="Enter Task" formControlName="title">   
+      <button type="submit" mat-raised-button color="primary" class="ctm-btn">Add User </button>
+    </form>    
+         </div>
+        <cdk-virtual-scroll-viewport appendOnly itemSize="50" class="example-viewport">
+       
+          <mat-tab-group animationDuration="0ms">
+            <mat-tab label="All Tasks">
+              <ng-container *ngFor="let x of userData | search:user">
+                <app-user-details [userDetils]="x"></app-user-details>
+              </ng-container>
+              
+            </mat-tab>
+            <mat-tab label="Active">
+              <app-active [useractive]="userData"></app-active>      
+            </mat-tab>
+            <mat-tab label="Completed">
+              <!-- <app-completed [usercompleted]="userData"></app-completed> -->              
+              <mat-form-field>
+                <mat-label>Select option</mat-label>               
+                <mat-select (selectionChange)="selectComponents($event)">                  
+                  <mat-option value="option1">Option 1</mat-option>
+                  <mat-option value="option2">Option 2</mat-option>
+                  <mat-option value="option3">Option 3</mat-option>
+                </mat-select>
+              </mat-form-field>
+              
+              <ng-container *ngIf="isSelected=='option1'">
+                <app-userinfo></app-userinfo>
+               
+              </ng-container>
+              <ng-container *ngIf="isSelected=='option2'">
+                <app-new-user></app-new-user>                
+              </ng-container>
+              <ng-container *ngIf="isSelected=='option3'">
+                <app-userinfo></app-userinfo>                
+              </ng-container>
+
+
+            </mat-tab>
+           
+          </mat-tab-group>
+          
+        </cdk-virtual-scroll-viewport>
+        <mat-card-content> 
+  </mat-card-content >
+</mat-card>
+</div>
+<!-- <table>
+  <tr *ngFor="let x of users">
+    <td>{{x.price}}</td>
+    <td>{{res}}</td>
+  </tr>
+</table> -->
+
+

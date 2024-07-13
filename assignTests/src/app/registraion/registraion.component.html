@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>Add New User</h1>
+<div mat-dialog-content style="width: 500px;">
+  <div class="row">
+    <div class="col-6">
+        <mat-form-field>
+            <mat-label>Id</mat-label>
+            <input matInput [(ngModel)]="data.animal">
+          </mat-form-field>
+    </div>
+    <div class="col-6">
+        <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input matInput [(ngModel)]="data.animal">
+          </mat-form-field>
+    </div>
+  </div>
+
+  <mat-form-field>
+    <mat-label>Completed</mat-label>
+    <select matNativeControl [(ngModel)]="selectedCar" name="Completed">      
+      <option *ngFor="let complet of completed" [value]="complet.value">
+        {{complet.viewValue}}
+      </option>
+    </select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Add</button>
+</div>

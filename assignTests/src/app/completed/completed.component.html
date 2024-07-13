@@ -1,0 +1,8 @@
+<ng-container *ngFor="let x of usercompleted | completed">
+    <mat-card [ngClass]="usercompleted.completed ? 'border-left-inactive' : 'border-left-active'">
+        <mat-card-content >        
+            <div>{{x.title}}</div> 
+            <div [ngClass]="usercompleted.completed ? 'orange' : 'green'" class="text-right" class="text-right">{{x.completed}}</div>           
+        </mat-card-content>
+    </mat-card>
+    </ng-container>
